@@ -1,9 +1,6 @@
 package org.example.lojacarrojpa.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,6 +31,15 @@ public class Carros {
 
     @NotNull(message = "informe se o carro esta disponivel")
     private Boolean disponibilidade;
+
+    @Transient
+    private Double margemLucro;
+
+    @PrePersist
+    @PreUpdate
+    public void calcularMargem(){
+        this.margemLucro = preco * 0.20;
+    }
 
     public Carros(){}
 }
