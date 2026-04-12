@@ -1,0 +1,5 @@
+org\example\lojacarrojpa\controller\CarrosController.class
+org\example\lojacarrojpa\LojaCarroJpaApplication.class
+org\example\lojacarrojpa\repository\CarrosRepository.class
+org\example\lojacarrojpa\service\CarrosService.class
+org\example\lojacarrojpa\model\Carros.class
